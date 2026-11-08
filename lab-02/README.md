@@ -36,7 +36,8 @@ lab-02/
 │   ├── delete.png
 │   ├── error-400.png
 │   ├── error-404.png
-│   └── db-after.png
+│   ├── db-after.png
+│   └── postman-run.png
 ├── .gitignore
 ├── books.db                # SQLite database file (10 starting rows)
 ├── init.sql                # table definition and the 10 rows
@@ -158,6 +159,10 @@ All eight requests are in `postman_collection.json`: import it into Postman and 
 | 06 | `GET /books/999/` | 404 | none |
 | 07 | `GET /books/abc/` | 400 | none |
 | 08 | `GET /unknown` | 404 | none |
+
+The collection was also executed end to end with Postman's Newman runner: 8 requests, 0 failed.
+
+![Postman collection run](./screenshots/postman-run.png)
 
 ## Screenshots
 

@@ -43,7 +43,8 @@ lab-03/
 │   ├── invalid-id.png
 │   ├── bad-query-param.png
 │   ├── errors-404.png
-│   └── db-after.png
+│   ├── db-after.png
+│   └── postman-run.png
 ├── .gitignore
 ├── books.db                      # SQLite database file (10 starting rows)
 ├── init.sql                      # table definition and the 10 rows
@@ -179,6 +180,10 @@ All 14 cases are in `postman_collection.json`: import it into Postman and press 
 | 12 | `GET /books/999/` | 404, `Book not found` |
 | 13 | `GET /books/abc/` | 400, invalid id |
 | 14 | `GET /books/?order_by=price;DROP%20TABLE%20book` | 400, `order_by must be one of ...` |
+
+The collection was also executed end to end with Postman's Newman runner: 14 requests, 0 failed.
+
+![Postman collection run](./screenshots/postman-run.png)
 
 ## Screenshots
 
