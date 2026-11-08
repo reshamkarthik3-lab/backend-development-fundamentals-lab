@@ -1,0 +1,226 @@
+{
+  "info": {
+    "_postman_id": "c4d1e9b2-7a83-4c55-8f10-6d2a9b3e4f02",
+    "name": "BDF Lab 3 - REST API",
+    "description": "Lab 3: REST API with query parameters and validation. Start the server with `npm run dev` before sending requests. Requests 01-05 read query parameters, 07-11 change data, and 08-14 cover the error cases.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 GET all books",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        }
+      }
+    },
+    {
+      "name": "02 GET search by title",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/?search_q=habit",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""],
+          "query": [{ "key": "search_q", "value": "habit" }]
+        }
+      }
+    },
+    {
+      "name": "03 GET price range",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/?min_price=300&max_price=400",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""],
+          "query": [
+            { "key": "min_price", "value": "300" },
+            { "key": "max_price", "value": "400" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "04 GET sort by price",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/?order_by=price&order=DESC&limit=3",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""],
+          "query": [
+            { "key": "order_by", "value": "price" },
+            { "key": "order", "value": "DESC" },
+            { "key": "limit", "value": "3" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "05 GET pagination",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/?limit=2&offset=8",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""],
+          "query": [
+            { "key": "limit", "value": "2" },
+            { "key": "offset", "value": "8" }
+          ]
+        }
+      }
+    },
+    {
+      "name": "06 GET one book",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/1/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "07 POST valid book",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"The Pragmatic Programmer\",\n  \"author\": \"Andrew Hunt\",\n  \"price\": 500,\n  \"pages\": 352\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        }
+      }
+    },
+    {
+      "name": "08 POST without author (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Untitled Book\",\n  \"price\": 300,\n  \"pages\": 200\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        }
+      }
+    },
+    {
+      "name": "09 POST price is text (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Untitled Book\",\n  \"author\": \"Someone\",\n  \"price\": \"free\",\n  \"pages\": 200\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""]
+        }
+      }
+    },
+    {
+      "name": "10 PUT update a book",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Atomic Habits\",\n  \"author\": \"James Clear\",\n  \"price\": 549,\n  \"pages\": 320\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/books/1/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "1", ""]
+        }
+      }
+    },
+    {
+      "name": "11 DELETE a book",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/10/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "10", ""]
+        }
+      }
+    },
+    {
+      "name": "12 GET missing book (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/999/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "999", ""]
+        }
+      }
+    },
+    {
+      "name": "13 GET invalid id (400)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/abc/",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", "abc", ""]
+        }
+      }
+    },
+    {
+      "name": "14 GET bad order_by (400)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/books/?order_by=price;DROP%20TABLE%20book",
+          "host": ["{{baseUrl}}"],
+          "path": ["books", ""],
+          "query": [
+            { "key": "order_by", "value": "price;DROP TABLE book" }
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "bdf-capture-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local helper that records real API responses and slices the capture pages into lab screenshots.",
+  "scripts": {
+    "capture": "node capture.js",
+    "slice": "node slice.js"
+  },
+  "dependencies": {
+    "pngjs": "^7.0.0"
+  }
+}

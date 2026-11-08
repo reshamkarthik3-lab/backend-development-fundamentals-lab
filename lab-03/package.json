@@ -1,0 +1,33 @@
+{
+  "name": "bdf-lab-03",
+  "version": "1.0.0",
+  "description": "Lab 3: REST API, query parameters, validation and debugging - Backend Development Fundamentals",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "seed": "node seed.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "sqlite",
+    "rest",
+    "query-parameters",
+    "lab"
+  ],
+  "author": "Resham Karthik",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

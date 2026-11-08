@@ -1,0 +1,25 @@
+{
+  "name": "bdf-lab-01",
+  "version": "1.0.0",
+  "description": "Lab 1: Node.js and Express server - Backend Development Fundamentals",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "http": "node server-http.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "http",
+    "lab"
+  ],
+  "author": "Resham Karthik",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
