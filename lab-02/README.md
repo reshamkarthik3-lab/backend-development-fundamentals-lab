@@ -5,7 +5,11 @@
 Course: Backend Development Fundamentals — Year II Term II — Aurora
 Faculty: Joel Prashanth D
 
-> When the project is deployed to Vercel, the database is copied to `/tmp`, the only writable folder there. Create, update and delete work on the live link, but the data returns to the 10 starting rows whenever the instance restarts. Locally, changes are kept in `books.db`.
+## Live deployment
+
+[Open Lab 2 on Render](https://bdf-lab-02-s7ie.onrender.com)
+
+The free Render service may spin down after inactivity, so its first request can take 50 seconds or more. Its filesystem is ephemeral: create, update and delete work on the live service, but database changes can be lost after a restart or redeploy. Locally, changes are kept in `books.db`.
 
 ## Objective
 
