@@ -5,6 +5,12 @@
 Course: Backend Development Fundamentals — Year II Term II — Aurora
 Faculty: Joel Prashanth D
 
+## Live deployment
+
+[Open Lab 1 on Render](https://bdf-lab-01-34dq.onrender.com)
+
+The free Render service may spin down after inactivity, so its first request can take 50 seconds or more.
+
 ## Objective
 
 Set up a Node.js project and build the same small web server twice: first with the built-in `http` module, then with Express. The Express version exposes three routes and answers every unknown path with a 404 message.
